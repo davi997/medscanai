@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MedScan AI - AI-Powered Medical Imaging Analysis</title><meta name="description" content="Upload a chest X-ray and get model-based findings with Grad-CAM explanations and a PDF report. Research and education only."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f7dd1'/><path d='M16 8v16M8 16h16' stroke='white' stroke-width='3'/></svg>"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head><body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="MedScan AI home"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="7" fill="#2f7dd1"/><path d="M8 11V8h3M24 11V8h-3M8 21v3h3M24 21v3h-3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 11v10M11 16h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg> MedScan AI</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="index.html#features" >Features</a></li>
+    <li><a href="index.html#tasks">Imaging tasks</a></li>
+    <li><a href="dashboard.html" >Dashboard</a></li>
+    <li><a class="btn btn-primary" href="upload.html">Upload scan</a></li>
+  </ul>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>AI-Powered Medical Imaging Analysis</h1>
+    <p class="lead">Upload a chest X-ray and see which findings a published deep learning model flags, where it looked, and how strongly. Every result comes from real model inference and is labelled with what it can and cannot tell you.</p>
+    <div class="cta"><a class="btn btn-primary" href="upload.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg> Upload scan</a><a class="btn btn-ghost on-dark" href="#how">See how it works</a></div>
+    <p class="assurance">For research and education. Results are not a diagnosis and must be reviewed by a qualified medical professional.</p>
+  </div>
+  <figure class="stage" style="margin:0">
+    <svg viewBox="0 0 400 400" role="img" aria-label="Illustration of a chest radiograph outline with a heat-map overlay">
+      <defs>
+        <radialGradient id="lung" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#8ec5f5" stop-opacity=".30"/><stop offset="1" stop-color="#8ec5f5" stop-opacity=".06"/></radialGradient>
+        <radialGradient id="heat"><stop offset="0" stop-color="#ff5a1f" stop-opacity=".85"/><stop offset=".45" stop-color="#ffc233" stop-opacity=".5"/><stop offset="1" stop-color="#2f9bff" stop-opacity="0"/></radialGradient>
+        <path id="rl" d="M196 112 Q122 120 84 176"/><path id="rr" d="M204 112 Q278 120 316 176"/>
+      </defs>
+      <rect width="400" height="400" fill="#02070f"/>
+      <g fill="none" stroke="#8ec5f5" stroke-opacity=".35" stroke-width="3" stroke-linecap="round">
+        <path d="M200 70V340" stroke-dasharray="2 9" stroke-opacity=".6"/><path d="M200 94L118 80M200 94L282 80"/>
+        <g><use href="#rl"/><use href="#rl" y="26"/><use href="#rl" y="52"/><use href="#rl" y="78"/><use href="#rl" y="104"/>
+           <use href="#rr"/><use href="#rr" y="26"/><use href="#rr" y="52"/><use href="#rr" y="78"/><use href="#rr" y="104"/></g>
+      </g>
+      <path d="M188 100C140 100 96 150 92 230 90 280 120 304 160 300 186 298 192 272 192 240Z" fill="url(#lung)" stroke="#8ec5f5" stroke-opacity=".5"/>
+      <path d="M212 100C260 100 304 150 308 230 310 280 280 304 240 300 214 298 208 272 208 240Z" fill="url(#lung)" stroke="#8ec5f5" stroke-opacity=".5"/>
+      <ellipse cx="226" cy="262" rx="34" ry="46" transform="rotate(14 226 262)" fill="#8ec5f5" fill-opacity=".16"/>
+      <g class="glow"><circle cx="138" cy="206" r="58" fill="url(#heat)"/>
+        <rect x="100" y="168" width="76" height="76" rx="4" fill="none" stroke="#ffc233" stroke-width="1.5" stroke-dasharray="5 4"/></g>
+    </svg>
+    <div class="tag"><span>Illustration</span><span>Grad-CAM-style overlay, not patient data</span></div>
+  </figure>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <div class="section-head"><h2>Built to be useful and honest about its limits</h2><p>MedScan AI shows what the model produced and what that output means, instead of dressing numbers up as diagnoses.</p></div>
+  <div class="feature-list">
+    <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3>Real inference only</h3><p>Results come from a pre-trained network running on the server. If a model is missing or fails, you get an error, never a made-up score.</p></div></div>
+    <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><div><h3>Grad-CAM explanations</h3><p>See which image regions drove the model's strongest finding. It shows where the network looked, not a confirmed lesion.</p></div></div>
+    <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><div><h3>Scores with context</h3><p>Each finding is plotted against the operating threshold published with the model, and labelled as an uncalibrated score.</p></div></div>
+    <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><div><h3>PDF reports</h3><p>Export examination details, images, findings, model information and the full disclaimer in one document.</p></div></div>
+    <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg></span><div><h3>Careful uploads</h3><p>Files are checked by content, size and format, then re-encoded. Original filenames and metadata are not stored.</p></div></div>
+    <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg></span><div><h3>Modular by task</h3><p>Each imaging task has its own model behind a common interface, so new validated models can be added without touching the rest.</p></div></div>
+  </div>
+</div></section>
+
+<section id="tasks" class="alt"><div class="wrap">
+  <div class="section-head"><h2>Supported imaging tasks</h2><p>One model cannot read every kind of scan. Each task needs its own validated model, and only the first is available today.</p></div>
+  <table class="tasks" id="taskTable"><thead><tr><th>Task</th><th>Model</th><th>Status</th></tr></thead><tbody>
+    <tr><td><strong>Chest X-ray analysis</strong><small>Frontal adult radiographs, PNG or JPEG</small></td><td>TorchXRayVision DenseNet-121, 18 pathology labels</td><td><span class="badge ok">Operational</span></td></tr>
+    <tr><td><strong>Bone fracture detection</strong></td><td>No verified model integrated</td><td><span class="badge off">Not integrated</span></td></tr>
+    <tr><td><strong>Brain CT analysis</strong></td><td>No verified model integrated</td><td><span class="badge off">Not integrated</span></td></tr>
+  </tbody></table>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="section-head"><h2>How it works</h2></div>
+  <ol class="steps">
+    <li><h3>Choose a task</h3><p>Pick the imaging category. Unavailable tasks are marked and cannot be selected.</p></li>
+    <li><h3>Upload the image</h3><p>The file is validated and sanitised on the server before anything runs.</p></li>
+    <li><h3>Model analysis</h3><p>The image is preprocessed and passed through the task's model, with Grad-CAM for the top finding.</p></li>
+    <li><h3>Review and export</h3><p>Read findings, scores and limitations, then download a PDF report.</p></li>
+  </ol>
+</div></section>
+
+<section class="alt" id="about"><div class="wrap about">
+  <div><h2>About MedScan AI</h2>
+    <p>MedScan AI is a graduation project for Medical Informatics. It demonstrates how a clinical-style imaging workflow can be assembled from open components: a FastAPI service, a PostgreSQL database, PyTorch models and a framework-free web interface.</p>
+    <p>The first module uses the open-source TorchXRayVision library. It was not developed or validated by this project and has not been approved for clinical use.</p></div>
+  <div class="notice warn"><strong>Medical disclaimer.</strong> This AI-generated result is intended for research and educational assistance only. It is not a definitive medical diagnosis and must be reviewed by a qualified medical professional.</div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap"><div><a class="brand" href="index.html"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="7" fill="#2f7dd1"/><path d="M8 11V8h3M24 11V8h-3M8 21v3h3M24 21v3h-3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 11v10M11 16h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg> MedScan AI</a><p>AI-assisted medical imaging analysis built as a Medical Informatics graduation project.</p></div><nav aria-label="Footer"><a href="upload.html">Upload scan</a><a href="dashboard.html">Dashboard</a><a href="/docs">API documentation</a></nav><small>MedScan AI is intended for research and educational assistance only. It is not a medical device, does not provide a medical diagnosis, and its output must be reviewed by a qualified medical professional.</small></div></footer>
+<script src="js/main.js"></script></body></html>

@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Analysing - MedScan AI</title><meta name="description" content="Analysis in progress."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f7dd1'/><path d='M16 8v16M8 16h16' stroke='white' stroke-width='3'/></svg>"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/upload.css"><link rel="stylesheet" href="css/results.css"></head><body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="MedScan AI home"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="7" fill="#2f7dd1"/><path d="M8 11V8h3M24 11V8h-3M8 21v3h3M24 21v3h-3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 11v10M11 16h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg> MedScan AI</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="index.html#features" >Features</a></li>
+    <li><a href="index.html#tasks">Imaging tasks</a></li>
+    <li><a href="dashboard.html" >Dashboard</a></li>
+    <li><a class="btn btn-primary" href="upload.html">Upload scan</a></li>
+  </ul>
+</div></header>
+<header class="page-head"><div class="wrap"><h1>Analysis</h1><p>The image is being processed by the model on the server.</p></div></header>
+<main id="main" class="page-body"><div class="wrap">
+  <div class="panel center-card" id="running"><h2>Running the model</h2>
+    <div class="progress indeterminate" role="progressbar" aria-label="Analysis in progress"><span></span></div>
+    <p class="elapsed" id="elapsed" aria-live="off">0 s</p>
+    <ul class="pipeline"><li>Image is re-read from secure storage and preprocessed (grayscale, centre crop, 224 x 224)</li><li>DenseNet-121 produces one score per pathology label</li><li>Grad-CAM is computed for the highest-ranked label</li></ul>
+    <p class="muted" style="margin-top:1rem;font-size:.9rem">The first analysis after the server starts also loads the model and can take longer.</p></div>
+  <div class="panel center-card" id="failed" hidden><h2>Analysis failed</h2><div class="notice err" id="errMsg" role="alert" style="text-align:left"></div>
+    <div class="result-actions" style="justify-content:center"><button class="btn btn-primary" id="retryBtn" type="button">Try again</button><a class="btn btn-ghost" href="upload.html">Upload a different image</a></div></div>
+</div></main>
+<footer class="footer"><div class="wrap"><div><a class="brand" href="index.html"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="7" fill="#2f7dd1"/><path d="M8 11V8h3M24 11V8h-3M8 21v3h3M24 21v3h-3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 11v10M11 16h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg> MedScan AI</a><p>AI-assisted medical imaging analysis built as a Medical Informatics graduation project.</p></div><nav aria-label="Footer"><a href="upload.html">Upload scan</a><a href="dashboard.html">Dashboard</a><a href="/docs">API documentation</a></nav><small>MedScan AI is intended for research and educational assistance only. It is not a medical device, does not provide a medical diagnosis, and its output must be reviewed by a qualified medical professional.</small></div></footer>
+<script src="js/main.js"></script><script src="js/analysis.js"></script></body></html>

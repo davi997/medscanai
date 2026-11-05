@@ -1,0 +1,54 @@
+{
+  "dataset": "ieee8023/covid-chestxray-dataset (PA / AP Erect X-rays)",
+  "n": 40,
+  "n_positive_pneumonia": 30,
+  "n_negative_no_finding": 10,
+  "seconds": 19.7,
+  "labels": {
+    "Pneumonia": {
+      "operating_threshold": 0.0568,
+      "accuracy": 0.625,
+      "precision": 0.941,
+      "recall_sensitivity": 0.533,
+      "specificity": 0.9,
+      "f1": 0.681,
+      "auc": 0.74,
+      "auc_95ci_bootstrap": [
+        0.577,
+        0.891
+      ],
+      "confusion": {
+        "tn": 9,
+        "fp": 1,
+        "fn": 14,
+        "tp": 16
+      }
+    },
+    "Lung Opacity": {
+      "operating_threshold": 0.202,
+      "accuracy": 0.8,
+      "precision": 0.958,
+      "recall_sensitivity": 0.767,
+      "specificity": 0.9,
+      "f1": 0.852,
+      "auc": 0.853,
+      "auc_95ci_bootstrap": [
+        0.732,
+        0.952
+      ],
+      "confusion": {
+        "tn": 9,
+        "fp": 1,
+        "fn": 7,
+        "tp": 23
+      }
+    }
+  },
+  "caveats": [
+    "Small, class-imbalanced sample; confidence intervals are wide.",
+    "Images come from published case reports/papers (selection bias), mixed devices and quality.",
+    "'Pneumonia' vs 'No Finding' is a proxy task: the model's labels are not identical to this dataset's labels.",
+    "Dataset independence from the training data is based on the weights' documentation, not verified by this project.",
+    "This is not a clinical validation."
+  ]
+}

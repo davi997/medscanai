@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Upload scan - MedScan AI</title><meta name="description" content="Upload a medical image for analysis."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f7dd1'/><path d='M16 8v16M8 16h16' stroke='white' stroke-width='3'/></svg>"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/upload.css"></head><body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="MedScan AI home"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="7" fill="#2f7dd1"/><path d="M8 11V8h3M24 11V8h-3M8 21v3h3M24 21v3h-3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 11v10M11 16h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg> MedScan AI</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="index.html#features" >Features</a></li>
+    <li><a href="index.html#tasks">Imaging tasks</a></li>
+    <li><a href="dashboard.html" >Dashboard</a></li>
+    <li><a class="btn btn-primary" href="upload.html">Upload scan</a></li>
+  </ul>
+</div></header>
+<header class="page-head"><div class="wrap"><h1>Upload scan</h1><p>Choose an imaging task, then add the image. Nothing is sent until you press Analyze.</p></div></header>
+<main id="main" class="page-body"><div class="wrap upload-grid">
+  <section class="panel" aria-labelledby="catH"><h2 id="catH">1. Imaging task</h2>
+    <div class="cat-list" id="catList" role="radiogroup" aria-labelledby="catH"><p class="muted">Loading tasks...</p></div>
+    <p class="fmt" id="fmtNote"></p>
+  </section>
+  <section class="panel" aria-labelledby="upH"><h2 id="upH">2. Image</h2>
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose or drop an image">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg><p><strong>Drag and drop an image here</strong></p><p class="muted">or click to browse</p><p class="muted" id="limitNote"></p></div>
+    </div>
+    <input type="file" id="fileInput" hidden>
+    <div class="preview" id="preview" hidden>
+      <div class="thumb"><img id="thumb" alt="Preview of the selected image"></div>
+      <div><dl class="meta"><dt>File type</dt><dd id="mType"></dd><dt>Size</dt><dd id="mSize"></dd><dt>Dimensions</dt><dd id="mDim"></dd><dt>Task</dt><dd id="mCat"></dd></dl>
+        <div class="progress" id="progress" hidden><span></span></div><div class="muted" id="progressLabel" aria-live="polite"></div>
+        <div class="actions"><button class="btn btn-primary" id="analyzeBtn" type="button">Analyze</button><button class="btn btn-ghost" id="replaceBtn" type="button">Replace image</button><button class="btn btn-ghost" id="removeBtn" type="button">Remove</button></div>
+      </div>
+    </div>
+    <div id="formMsg" role="alert"></div>
+    <p class="privacy">Use only synthetic, anonymised or properly licensed images. The original filename and image metadata are discarded on upload. Images stay on this server and are not sent to external services.</p>
+  </section>
+</div></main>
+<footer class="footer"><div class="wrap"><div><a class="brand" href="index.html"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="7" fill="#2f7dd1"/><path d="M8 11V8h3M24 11V8h-3M8 21v3h3M24 21v3h-3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 11v10M11 16h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg> MedScan AI</a><p>AI-assisted medical imaging analysis built as a Medical Informatics graduation project.</p></div><nav aria-label="Footer"><a href="upload.html">Upload scan</a><a href="dashboard.html">Dashboard</a><a href="/docs">API documentation</a></nav><small>MedScan AI is intended for research and educational assistance only. It is not a medical device, does not provide a medical diagnosis, and its output must be reviewed by a qualified medical professional.</small></div></footer>
+<script src="js/main.js"></script><script src="js/upload.js"></script></body></html>

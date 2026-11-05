@@ -1,0 +1,22 @@
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
+sqlalchemy>=2.0
+psycopg2-binary>=2.9
+pydantic-settings>=2.1
+numpy
+pillow
+opencv-python-headless
+scikit-image
+reportlab
+torchxrayvision>=1.3
+# torch + torchvision: see README "Installing PyTorch" (CPU-only build recommended)
+torch
+torchvision
+# tests / evaluation
+pytest
+httpx
+pypdf
+scikit-learn
+pandas
+playwright
